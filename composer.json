@@ -1,5 +1,6 @@
 {
     "name": "webriq/gridguyz-cms",
+    "type": "project",
     "description": "Gridguyz - social content management system - skeleton application",
     "license": "CC-BY-SA-3.0",
     "keywords": [
@@ -11,9 +12,30 @@
         "system"
     ],
     "homepage": "http://gridguyz.com/",
+    "authors": [
+        {
+            "name": "Mihály Farkas",
+            "email": "mihaly.farkas@megaweb.hu",
+            "homepage": "http://gridguyz.com/",
+            "role": "Developer"
+        },
+        {
+            "name": "David Pozsar",
+            "email": "david.pozsar@megaweb.hu",
+            "homepage": "http://gridguyz.com/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "dev@megaweb.hu",
+        "source": "https://github.com/webriq/gridguyz-cms"
+    },
     "require": {
         "php": ">=5.4",
         "webriq/gridguyz-core": "*"
+    },
+    "suggest": {
+        "webriq/gridguyz-multisite": "*"
     },
     "autoload": {
         "psr-0": {
