@@ -1,0 +1,22 @@
+{
+    "name": "webriq/gridguyz-cms",
+    "description": "Gridguyz - social content management system - skeleton application",
+    "license": "CC-BY-SA-3.0",
+    "keywords": [
+        "gridguyz",
+        "cms",
+        "social",
+        "content",
+        "management",
+        "system"
+    ],
+    "homepage": "http://gridguyz.com/",
+    "require": {
+        "php": ">=5.4",
+        "webriq/gridguyz-core": "*"
+    },
+    "autoload": {
+        "psr-0": {
+        }
+    }
+}

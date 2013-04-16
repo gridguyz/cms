@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+@font-face
+{
+    font-family: "Petit Formal Script";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/uploads/_central/pages/resources/PetitFormalScript-Regular.eot");
+    src: local("Petit Formal Script"),
+         local("PetitFormalScript-Regular"),
+         url("/uploads/_central/pages/resources/PetitFormalScript-Regular.eot") format("embedded-opentype"),
+         url("/uploads/_central/pages/resources/PetitFormalScript-Regular.woff") format("woff");
+}
+
+@font-face
+{
+    font-family: "PetitFormalScript-Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/uploads/_central/pages/resources/PetitFormalScript-Regular.eot");
+    src: local("Petit Formal Script"),
+         local("PetitFormalScript-Regular"),
+         url("/uploads/_central/pages/resources/PetitFormalScript-Regular.eot") format("embedded-opentype"),
+         url("/uploads/_central/pages/resources/PetitFormalScript-Regular.woff") format("woff");
+}
+
+@font-face
+{
+    font-family: "Myriad Pro";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/uploads/_central/pages/resources/MyriadPro-Regular.eot");
+    src: local("Myriad Pro"),
+         local("MyriadPro-Regular"),
+         url("/uploads/_central/pages/resources/MyriadPro-Regular.eot") format("embedded-opentype"),
+         url("/uploads/_central/pages/resources/MyriadPro-Regular.woff") format("woff");
+}
+
+@font-face
+{
+    font-family: "MyriadPro-Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/uploads/_central/pages/resources/MyriadPro-Regular.eot");
+    src: local("Myriad Pro"),
+         local("MyriadPro-Regular"),
+         url("/uploads/_central/pages/resources/MyriadPro-Regular.eot") format("embedded-opentype"),
+         url("/uploads/_central/pages/resources/MyriadPro-Regular.woff") format("woff");
+}

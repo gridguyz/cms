@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /app/*/login
+Disallow: /app/*/logout
+Disallow: /app/*/password-change-request
