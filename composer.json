@@ -36,9 +36,5 @@
     },
     "suggest": {
         "webriq/gridguyz-multisite": "*"
-    },
-    "autoload": {
-        "psr-0": {
-        }
     }
 }
