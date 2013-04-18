@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'db'        => include __DIR__ . '/autoload/db.php',
+    'db'        => include __DIR__ . '/autoload/db.local.php',
     'modules'   => array(
         'Grid\Core',
         'Grid\Mail',

@@ -12,6 +12,5 @@
  */
 
 return array(
-    'db' => include __DIR__ . '/db.php',
     'di' => array(),
 );
