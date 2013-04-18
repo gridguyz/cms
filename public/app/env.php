@@ -1,5 +1,6 @@
 <?php
 
+use Zend\Debug\Debug;
 use Zork\Session\ReadOnlyHandler;
 
 include './init.php';
@@ -20,15 +21,15 @@ if ( ! empty( $_REQUEST['clearSession'] ) )
 
 ?>
 
-<?php p( $_ENV, '<strong>$_ENV</strong>' ) ?>
+<?php Debug::dump( $_ENV, '<strong>$_ENV</strong>' ) ?>
 
 <hr />
-<?php p( $_SERVER, '<strong>$_SERVER</strong>' ) ?>
+<?php Debug::dump( $_SERVER, '<strong>$_SERVER</strong>' ) ?>
 
 <hr />
-<?php p( $_REQUEST, '<strong>$_REQUEST</strong>' ) ?>
+<?php Debug::dump( $_REQUEST, '<strong>$_REQUEST</strong>' ) ?>
 
 <hr />
-<?php p( $_SESSION, '<strong>$_SESSION</strong>' ) ?>
+<?php Debug::dump( $_SESSION, '<strong>$_SESSION</strong>' ) ?>
 
 <a href="?clearSession=1">Clear session</a>
