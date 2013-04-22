@@ -12,12 +12,14 @@
  */
 
 return array(
-    'driver'            => 'Pdo',
-    'pdodriver'         => 'pgsql',
-    'host'              => 'localhost',
-    'port'              => 5432,
-    'username'          => 'username',
-    'password'          => 'password',
-    'dbname'            => 'dbname',
-    'schema'            => array( 'site', '_common' ),
+    'db' => array(
+        'driver'    => 'Pdo',
+        'pdodriver' => 'pgsql',
+        'host'      => 'localhost',
+        'port'      => 5432,
+        'username'  => 'username',
+        'password'  => 'password',
+        'dbname'    => 'dbname',
+        'schema'    => array( 'site', '_common' ),
+    ),
 );

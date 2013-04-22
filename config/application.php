@@ -1,7 +1,9 @@
 <?php
 
+$db = require __DIR__ . '/autoload/db.local.php';
+
 return array(
-    'db'        => include __DIR__ . '/autoload/db.local.php',
+    'db'        => $db['db'],
     'modules'   => array(
         'Grid\Core',
         'Grid\Mail',

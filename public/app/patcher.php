@@ -33,5 +33,6 @@ $paths = new CallbackMapIterator(
     CallbackMapIterator::FLAG_GENERATE_KEYS
 );
 
-$patcher = new Patcher( require './config/autoload/db.local.php' );
+$config  = require './config/autoload/db.local.php';
+$patcher = new Patcher( $config['db'] );
 $patcher->patch( $paths );
