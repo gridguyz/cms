@@ -2,7 +2,7 @@ Gridguyz - CMS
 ==============
 
 Gridguyz is a content management system, where everything is built up from
-blocks called *paragraph*s. Even *content*s and *layout*s are paragraphs.
+blocks called *paragraphs*. Even *contents* and *layouts* are paragraphs.
 
 It has easy-to-use drag'n'drop to edit paragraphs' position, and intuitive
 WYSIWYG to edit paragraphs' contents.
