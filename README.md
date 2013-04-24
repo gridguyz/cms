@@ -10,7 +10,7 @@ WYSIWYG to edit paragraphs' contents.
 Install
 -------
 
-Please see [INSTALL.txt](INSTALL.txt).
+Please see [INSTALL.md](INSTALL.md).
 
 License
 -------
