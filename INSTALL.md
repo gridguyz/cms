@@ -1,6 +1,19 @@
 Gridguyz - CMS: Install
 =======================
 
+1. [System requirements](#system-requirements)
+
+   1. [Database](#database)
+   2. [Web server](#web-server)
+   3. [PHP](#php)
+   4. [Composer](#composer)
+
+2. [Installation](#installation)
+
+   1. [With composer](#with-composer)
+   2. [With git clone](#with-git-clone)
+   3. [Add modules](#add-modules)
+
 System requirements
 -------------------
 
@@ -16,6 +29,8 @@ Tested HTTP servers:
 * [Apache](http://httpd.apache.org/download.cgi) 2.2+
 * [Nginx](http://nginx.org/en/download.html)
 * [Lighttpd](http://www.lighttpd.net/download/) / *lighty* 1.4.24+ (soon)
+
+Server docroot should be set under `$gridguyz_path/public`.
 
 ### PHP
 
@@ -65,6 +80,14 @@ $ php composer.phar create-project webriq/gridguyz-cms
     ```sh
     $ php composer.phar install
     ```
+
+### Add modules
+
+You can add modules to your Gridguyz instance by simply runnig
+
+```sh
+$ php composer.phar require
+```
 
 <a name="--no-custom-installers"></a><sup id="--no-custom-installers">1</sup>
 You should not use the `--no-custom-installers` flag,
