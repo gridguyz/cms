@@ -10,17 +10,7 @@ WYSIWYG to edit paragraphs' contents.
 Install
 -------
 
-You can install Gridguyz with [composer](http://getcomposer.org/ "Get composer"):
-
-    php composer.phar create-project webriq/gridguyz-cms
-
-<dl>
-  <dt>Note</dt>
-  <dd>
-    You should not use the <code>--no-custom-installers</code> flag,
-    as Gridguyz use custom composer package-types.
-  </dd>
-</dl>
+Please see [INSTALL.txt](INSTALL.txt).
 
 License
 -------
