@@ -44,14 +44,28 @@ All gridguyz modules are in composer packages.
 Installation
 ------------
 
-You can install Gridguyz with composer:
+### With composer
 
-    php composer.phar create-project webriq/gridguyz-cms
+You can install Gridguyz with composer <sup>[1](#--no-custom-installers)</sup>
 
-<dl>
-  <dt>Note</dt>
-  <dd>
-    You should not use the <code>--no-custom-installers</code> flag,
-    as Gridguyz use custom composer package-types.
-  </dd>
-</dl>
+```sh
+$ php composer.phar create-project webriq/gridguyz-cms
+```
+
+### With git clone
+
+1.  Clone the Gridguyz skeleton application
+
+    ```sh
+    $ git clone git://github.com/webriq/gridguyz-cms.git
+    ```
+
+2.  Install packages with composer <sup>[1](#--no-custom-installers)</sup>
+
+    ```sh
+    $ php composer.phar install
+    ```
+
+<a name="--no-custom-installers"></a><sup id="--no-custom-installers">1</sup>
+You should not use the `--no-custom-installers` flag,
+as Gridguyz use custom composer package-types.
