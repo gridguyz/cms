@@ -1,6 +1,6 @@
 <?php
 
-use Zork\Patcher\Patcher;
+use Grid\Installer\Patcher;
 use Zork\Iterator\CallbackMapIterator;
 
 include './init.php';
@@ -34,5 +34,5 @@ $paths = new CallbackMapIterator(
 );
 
 $config  = require './config/autoload/db.local.php';
-$patcher = new Patcher( $config['db'] );
+$patcher = new Patcher( (array) $config['db'] );
 $patcher->patch( $paths );
