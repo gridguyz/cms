@@ -1,0 +1,11 @@
+<?php
+
+return array(
+    'modules' => array(
+        'Grid\MultisiteCentral' => array(
+            'schemaPrefix'  => 'site_',
+            'schemaPostfix' => '',
+            'domainPostfix' => '.sites.example.com',
+        ),
+    ),
+);
