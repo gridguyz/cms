@@ -30,26 +30,11 @@
         "email": "dev@megaweb.hu",
         "source": "https://github.com/webriq/gridguyz-cms"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "D:/htdocs/gridguyz/gridguyz-installer"
-        },
-        {
-            "type": "vcs",
-            "url": "D:/htdocs/gridguyz/gridguyz-core"
-        },
-        {
-            "type": "vcs",
-            "url": "D:/htdocs/gridguyz/gridguyz-multisite"
-        }
-    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": ">=5.4",
-        "webriq/gridguyz-core": "*",
-        "webriq/gridguyz-multisite": "*"
+        "webriq/gridguyz-core": "*"
     },
     "suggest": {
         "webriq/gridguyz-multisite": "*"
