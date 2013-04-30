@@ -1,6 +1,8 @@
 <?php
 
-return \Zend\Stdlib\ArrayUtils::merge(
+use Zend\Stdlib\ArrayUtils;
+
+return ArrayUtils::merge(
     array(
         'modules'   => array(
             'Grid\Core',
@@ -36,6 +38,8 @@ return \Zend\Stdlib\ArrayUtils::merge(
             ),
         ),
     ),
-    require __DIR__ . '/autoload/db.local.php',
-    require __DIR__ . '/autoload/application.php'
+    ArrayUtils::merge(
+        require __DIR__ . '/autoload/db.local.php',
+        require __DIR__ . '/autoload/application.php'
+    )
 );
