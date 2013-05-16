@@ -29,7 +29,7 @@ return ArrayUtils::merge(
                 'ModuleManager' => 'Zork\Mvc\Service\ModuleManagerFactory',
             ),
             'invokables'    => array(
-                'SiteConfiguration' => 'Zork\Db\SiteConfiguration\Singlesite',
+                'SiteConfiguration' => 'Grid\Core\SiteConfiguration\Singlesite',
             ),
             'aliases'       => array(
                 'Zork\Db\SiteInfo'                      => 'SiteInfo',
