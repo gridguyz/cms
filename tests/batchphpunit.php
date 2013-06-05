@@ -14,6 +14,7 @@ function isDirButNotDot( $current, $_, $iterator )
     return $current->isDir() && ! $iterator->isDot();
 }
 
+$cwd     = realpath( dirname( __DIR__ ) );
 $phpunit = 'vendor' . DIRECTORY_SEPARATOR . 'bin' . DIRECTORY_SEPARATOR . 'phpunit';
 $vendors = new CallbackFilterIterator(
     new FilesystemIterator( 'vendor' ),
@@ -79,12 +80,12 @@ foreach ( $vendors as $vendor )
         $process = proc_open(
             $cmd = sprintf(
                 '%s -c %s',
-                escapeshellarg( $phpunit ),
+                $phpunit,
                 escapeshellarg( $phpunitXml )
             ),
             array(),
             $pipes,
-            __DIR__,
+            $cwd,
             null
         );
 
@@ -102,6 +103,7 @@ foreach ( $vendors as $vendor )
             }
         }
 
+        echo 'Run `', $cmd, '` at "', $cwd, '"', PHP_EOL;
         $returnCode = proc_close( $process );
 
         if ( $returnCode )
