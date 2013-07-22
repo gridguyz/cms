@@ -240,43 +240,43 @@ if ( ! empty( $acceptLangs ) )
                     <h1>English</h1>
                     <p>Web Site is temporarily unavailable due to maintenance work or due to heavy traffic.</p>
                     <p>Please check back in a few minutes.</p>
-                    <p class="signature">Grid's support team is sorry for the inconvenience.</p>
+                    <p class="signature">Gridguyz's support team is sorry for the inconvenience.</p>
                 </div>
                 <div class="maintenanceBox fr">
                     <h1>Français</h1>
                     <p>Site Web est temporairement indisponible dû à des travaux d'entretien ou en raison de trafic sur le site.</p>
                     <p>Vérifiez de nouveau dans quelques minutes.</p>
-                    <p class="signature">L'équipe support de Grid est désolé pour cet inconvénient.</p>
+                    <p class="signature">L'équipe support de Gridguyz est désolé pour cet inconvénient.</p>
                 </div>
                 <div class="maintenanceBox nl">
                     <h1>Nederlands</h1>
                     <p>Deze web site kan op dit moment niet bereikt worden, wegens onderhoudswerken of te druk verkeer op de website.</p>
                     <p>Gelieve het binnen enkele ogenblikken nog eens te proberen.</p>
-                    <p class="signature">Het Grid support team verontschuldigd zich voor deze ongemakken.</p>
+                    <p class="signature">Het Gridguyz support team verontschuldigd zich voor deze ongemakken.</p>
                 </div>
                 <div class="maintenanceBox de">
                     <h1>Deutsch</h1>
                     <p>Web-Site ist vorübergehend nicht verfügbar wegen Wartungsarbeiten oder wegen schwere Datenverkehr auf der Website.</p>
                     <p>Bitte versuchen Sie es in ein paar Minuten noch einmal.</p>
-                    <p class="signature">Das Grid Team bedauert die mögliche Unannehmlichkeiten.</p>
+                    <p class="signature">Das Gridguyz Team bedauert die mögliche Unannehmlichkeiten.</p>
                 </div>
                 <div class="maintenanceBox es">
                     <h1>Español</h1>
                     <p>Sitio Web no está disponible temporalmente debido a trabajos de mantenimiento o el tráfico en el sitio.</p>
                     <p>Por favor, compruebe de nuevo.</p>
-                    <p class="signature">El equipo de apoyo de Grid disculpe las molestias.</p>
+                    <p class="signature">El equipo de apoyo de Gridguyz disculpe las molestias.</p>
                 </div>
                 <div class="maintenanceBox hu">
                     <h1>Magyar</h1>
                     <p>Az oldal karbantartási munkálatok miatt jelenleg nem elérhető.</p>
                     <p>Kérjük, látogasson vissza néhány perc múlva.</p>
-                    <p class="signature">A Grid csapata elnézést kér az okozott kellemetlenségekért.</p>
+                    <p class="signature">A Gridguyz csapata elnézést kér az okozott kellemetlenségekért.</p>
                 </div>
                 <div class="maintenanceBox ro">
                     <h1>Română</h1>
                     <p>Situl momentan nu este disponibil din motive de intretinere.</p>
                     <p>Va rugam sa reveniti in cateva minute.</p>
-                    <p class="signature">Echipa Grid va cere scuze pentru aceste neplaceri.</p>
+                    <p class="signature">Echipa Gridguyz va cere scuze pentru aceste neplaceri.</p>
                 </div>
             </div>
         </div>
