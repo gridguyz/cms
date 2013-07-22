@@ -2,30 +2,30 @@
 cd "`dirname "$0"`"
 cd ..
 
-echo -e "\n"
+echo ""
 echo "Maintenance activate"
 echo "--------------------"
-echo -e "\n"
+echo ""
 
 cp public/app/maintenance.php public
 
-echo -e "\n"
+echo ""
 echo "Git pull"
 echo "--------"
-echo -e "\n"
+echo ""
 
 git pull
 
-echo -e "\n"
+echo ""
 echo "Composer update"
 echo "---------------"
-echo -e "\n"
+echo ""
 
 php composer.phar update --no-dev
 
-echo -e "\n"
+echo ""
 echo "Maintenance deactivate"
 echo "----------------------"
-echo -e "\n"
+echo ""
 
 rm public/maintenance.php
