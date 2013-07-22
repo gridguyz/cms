@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+cd "`dirname "$0"`"
+cd ..
+
+echo -e "\n"
+echo "Maintenance activate"
+echo "--------------------"
+echo -e "\n"
+
+cp public/app/maintenance.php public
+
+echo -e "\n"
+echo "Git pull"
+echo "--------"
+echo -e "\n"
+
+git pull
+
+echo -e "\n"
+echo "Composer update"
+echo "---------------"
+echo -e "\n"
+
+php composer.phar update --no-dev
+
+echo -e "\n"
+echo "Maintenance deactivate"
+echo "----------------------"
+echo -e "\n"
+
+rm public/maintenance.php
