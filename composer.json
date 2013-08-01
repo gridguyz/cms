@@ -1,7 +1,7 @@
 {
-    "name": "webriq/gridguyz-cms",
+    "name": "gridguyz/cms",
     "type": "project",
-    "description": "Gridguyz - social content management system - skeleton application",
+    "description": "Gridguyz - the social content management system - skeleton application",
     "license": "CC-BY-SA-3.0",
     "keywords": [
         "gridguyz",
@@ -34,7 +34,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=5.4",
-        "webriq/gridguyz-core": "*"
+        "gridguyz/core": "*"
     },
     "require-dev": {
         "firephp/firephp-core": "*",
@@ -42,6 +42,6 @@
         "phpunit/dbunit": ">=1.2"
     },
     "suggest": {
-        "webriq/gridguyz-multisite": "*"
+        "gridguyz/multisite": "*"
     }
 }
