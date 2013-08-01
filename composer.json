@@ -28,7 +28,7 @@
     ],
     "support": {
         "email": "dev@megaweb.hu",
-        "source": "https://github.com/webriq/gridguyz-cms"
+        "source": "https://github.com/gridguyz/cms"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

@@ -64,7 +64,7 @@ Installation
 You can install Gridguyz with composer <sup>[1](#--no-custom-installers)</sup>
 
 ```sh
-$ php composer.phar create-project webriq/gridguyz-cms
+$ php composer.phar create-project gridguyz/cms
 ```
 
 ### With git clone
@@ -72,7 +72,7 @@ $ php composer.phar create-project webriq/gridguyz-cms
 1.  Clone the Gridguyz skeleton application
 
     ```sh
-    $ git clone git://github.com/webriq/gridguyz-cms.git
+    $ git clone git://github.com/gridguyz/cms.git
     ```
 
 2.  Install packages with composer <sup>[1](#--no-custom-installers)</sup>
