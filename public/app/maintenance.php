@@ -1,5 +1,38 @@
 <?php
 
+/**
+ * This makes our life easier when dealing with paths. Everything is relative
+ * to the application root now.
+ */
+chdir( dirname( __DIR__ ) );
+
+if ( ! is_file( './composer.json' ) )
+{
+    chdir( dirname( __DIR__ ) );
+}
+
+if ( $_REQUEST['update'] === 'status' )
+{
+    $send = null;
+
+    if ( is_file( './data/update/status.json' ) )
+    {
+        $send = @ json_decode(
+            file_get_contents( './data/update/status.json' ),
+            true
+        );
+    }
+
+    if ( $send && is_file( './data/update/output.txt' ) )
+    {
+        $send['output'] = @ file_get_contents( './data/update/output.txt' );
+    }
+
+    header( 'Content-type: application/json; charset=utf-8' );
+    echo @ json_encode( $send );
+    exit();
+}
+
 header( 'HTTP/1.1 503 Service Temporarily Unavailable' );
 header( 'Status: 503 Service Temporarily Unavailable' );
 header( 'Retry-After: 3600' );
