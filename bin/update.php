@@ -97,8 +97,14 @@ function runProcess( $cmd, array $args = array() )
     }
 
     $pipes = array();
-    $cmd   = escapeshellcmd( $cmd ) . ' ' . array_map( 'escapeshellarg', $args );
-    $proc  = proc_open( $cmd, $descriptorspec, $pipes );
+    $cmd   = escapeshellcmd( $cmd );
+
+    foreach ( $args as $arg )
+    {
+        $cmd .= ' ' . escapeshellarg( $arg );
+    }
+
+    $proc = proc_open( $cmd, $descriptorspec, $pipes );
 
     if ( ! is_resource( $proc ) )
     {
