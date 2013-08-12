@@ -83,6 +83,7 @@ if ( ! empty( $acceptLangs ) )
         <meta http-equiv="Expires" content="-1" />
         <meta http-equiv="Cache-Control" content="no-cache" />
         <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Refresh" content="60" />
         <meta name="googlebot" content="noindex, nofollow, noarchive" />
         <title>Maintenance work</title>
         <style type="text/css">
