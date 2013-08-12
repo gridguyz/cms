@@ -65,7 +65,7 @@ function sendMessage( $result, $messages )
             @ unlink( PUBLIC_DIR . '/maintenance.php' );
         }
 
-        exit( $result );
+        exit( (int) $result );
     }
 }
 
@@ -127,6 +127,13 @@ function runProcess( $cmd, array $args = array() )
         ) );
     }
 }
+
+@ unlink( DATA_DIR . '/output.txt' );
+@ unlink( DATA_DIR . '/status.json' );
+@ file_put_contents( DATA_DIR . '/status.json', json_encode( array(
+    'messages'  => array(),
+    'result'    => null,
+) ) );
 
 if ( ! is_file( PUBLIC_DIR . '/maintenance.php' ) &&
      !  @ copy( PUBLIC_DIR . '/app/maintenance.php', PUBLIC_DIR . '/maintenance.php' ) )
