@@ -85,23 +85,26 @@ function runProcess( $cmd, array $args = array() )
         2 => array( 'file', $outputFilepath, 'a' ), // stderr
     );
 
-    if ( is_file( $outputFilepath ) )
-    {
-        $outputFile = @ fopen( $outputFilepath, 'a' );
-
-        if ( is_resource( $outputFile ) )
-        {
-            @ fwrite( $outputFile, PHP_EOL . PHP_EOL );
-            @ fclose( $outputFile );
-        }
-    }
-
     $pipes = array();
     $cmd   = escapeshellcmd( $cmd );
 
     foreach ( $args as $arg )
     {
         $cmd .= ' ' . escapeshellarg( $arg );
+    }
+
+    $outputFileExists   = is_file( $outputFilepath );
+    $outputFile         = @ fopen( $outputFilepath, 'a' );
+
+    if ( is_resource( $outputFile ) )
+    {
+        if ( $outputFileExists )
+        {
+            @ fwrite( $outputFile, PHP_EOL . PHP_EOL );
+        }
+
+        @ fwrite( $outputFile, '$ ' . $cmd . PHP_EOL );
+        @ fclose( $outputFile );
     }
 
     $proc = proc_open( $cmd, $descriptorspec, $pipes );
