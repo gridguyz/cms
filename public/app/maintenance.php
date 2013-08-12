@@ -11,7 +11,7 @@ if ( ! is_file( './composer.json' ) )
     chdir( dirname( __DIR__ ) );
 }
 
-if ( $_REQUEST['update'] === 'status' )
+if ( ! empty( $_REQUEST['update'] ) && $_REQUEST['update'] === 'status' )
 {
     $send = null;
 
