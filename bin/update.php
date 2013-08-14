@@ -25,10 +25,10 @@ function sendMessage( $result, $messages )
         $messages = array( (string) $messages => array() );
     }
 
-    foreach ( $messages as $message => $values )
+ /* foreach ( $messages as $message => $values )
     {
         echo vsprintf( $message, (array) $values ), PHP_EOL;
-    }
+    } */
 
     if ( file_exists( $file ) )
     {
@@ -107,7 +107,7 @@ function runProcess( $cmd, array $args = array() )
         @ fclose( $outputFile );
     }
 
-    $proc = proc_open( $cmd, $descriptorspec, $pipes );
+    $proc = proc_open( $cmd, $descriptorspec, $pipes, getcwd() );
 
     if ( ! is_resource( $proc ) )
     {
@@ -146,7 +146,7 @@ if ( ! is_file( PUBLIC_DIR . '/maintenance.php' ) &&
 
 if ( is_dir( './.git' ) )
 {
-    runProcess( 'git', array( 'pull' ) );
+    runProcess( 'git', array( 'pull', getcwd() ) );
     sendMessage( null, 'admin.packages.git.pulled' );
 }
 
