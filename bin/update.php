@@ -150,7 +150,7 @@ if ( is_dir( './.git' ) )
     sendMessage( null, 'admin.packages.git.pulled' );
 }
 
-runProcess( 'php', array( 'composer.phar',
+runProcess( 'php', array( realpath( './composer.phar' ),
                           'update',
                           '--no-dev',
                           '--no-interaction' ) );
