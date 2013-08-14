@@ -150,9 +150,22 @@ if ( is_dir( './.git' ) )
     sendMessage( null, 'admin.packages.git.pulled' );
 }
 
-runProcess( 'php', array( 'composer.phar',
-                          'update',
-                          '--no-dev',
-                          '--no-interaction' ) );
+if ( defined( 'PHP_BINARY' ) )
+{
+    $php = PHP_BINARY;
+}
+else if ( defined( 'PHP_BINDIR' ) )
+{
+    $php = PHP_BINDIR . DIRECTORY_SEPARATOR . 'php';
+}
+else
+{
+    $php = 'php';
+}
+
+runProcess( PHP_BINARY, array( 'composer.phar',
+                               'update',
+                               '--no-dev',
+                               '--no-interaction' ) );
 
 sendMessage( 0, 'admin.packages.update.done' );
