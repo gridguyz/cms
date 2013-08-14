@@ -163,9 +163,9 @@ else
     $php = 'php';
 }
 
-runProcess( PHP_BINARY, array( 'composer.phar',
-                               'update',
-                               '--no-dev',
-                               '--no-interaction' ) );
+runProcess( $php, array( 'composer.phar',
+                         'update',
+                         '--no-dev',
+                         '--no-interaction' ) );
 
 sendMessage( 0, 'admin.packages.update.done' );
