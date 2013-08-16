@@ -107,6 +107,8 @@ function runProcess( $cmd, array $args = array() )
         @ fclose( $outputFile );
     }
 
+    @ chmod( $outputFile, 0777 );
+
     $proc = proc_open( $cmd, $descriptorspec, $pipes, getcwd() );
 
     if ( ! is_resource( $proc ) )
@@ -137,6 +139,8 @@ function runProcess( $cmd, array $args = array() )
     'messages'  => array(),
     'result'    => null,
 ) ) );
+
+@ chmod( DATA_DIR . '/status.json', 0777 );
 
 if ( ! is_file( PUBLIC_DIR . '/maintenance.php' ) &&
      !  @ copy( PUBLIC_DIR . '/app/maintenance.php', PUBLIC_DIR . '/maintenance.php' ) )
