@@ -70,6 +70,31 @@ function sendMessage( $result, $messages )
 }
 
 /**
+ * Send to output
+ *
+ * @param   string  $text
+ * @return  void
+ */
+function sendOutput( $text )
+{
+    $filePath   = DATA_DIR . '/output.txt';
+    $fileExists = is_file( $filePath );
+    $file       = @ fopen( $filePath, 'a' );
+
+    if ( is_resource( $file ) )
+    {
+        if ( $fileExists )
+        {
+            @ fwrite( $file, PHP_EOL );
+        }
+
+        @ fwrite( $file, $text );
+        @ fclose( $file );
+        @ chmod( $filePath, 0777 );
+    }
+}
+
+/**
  * Run a process
  *
  * @param   string  $cmd
@@ -94,21 +119,7 @@ function runProcess( $cmd, array $args = array(), array $env = array() )
         $cmd .= ' ' . escapeshellarg( $arg );
     }
 
-    $outputFileExists   = is_file( $outputFilepath );
-    $outputFile         = @ fopen( $outputFilepath, 'a' );
-
-    if ( is_resource( $outputFile ) )
-    {
-        if ( $outputFileExists )
-        {
-            @ fwrite( $outputFile, PHP_EOL . PHP_EOL );
-        }
-
-        @ fwrite( $outputFile, '$ ' . $cmd . PHP_EOL );
-        @ fclose( $outputFile );
-    }
-
-    @ chmod( $outputFile, 0777 );
+    sendOutput( '$ ' . $cmd . PHP_EOL );
 
     if ( empty( $env ) )
     {
@@ -168,6 +179,8 @@ if ( false === ( $home = getenv( 'HOME' ) ) || ! is_dir( $home ) )
 {
     @ mkdir( $home = realpath( './data/cache/composer' ), 0777 );
 }
+
+sendOutput( 'HOME=' . escapeshellarg( $home ) . PHP_EOL );
 
 runProcess(
     'php',
