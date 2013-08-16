@@ -175,17 +175,11 @@ if ( is_dir( './.git' ) )
     sendMessage( null, 'admin.packages.git.pulled' );
 }
 
-if ( getenv( 'HOME' ) && is_writable( getenv( 'HOME' ) ) )
+if ( ! ( $home = getenv( 'HOME' ) ) &&
+     ! ( $home = getenv( 'COMPOSER_HOME' ) ) )
 {
-    $home = getenv( 'HOME' );
-}
-else if ( getenv( 'COMPOSER_HOME' ) && is_writable( getenv( 'COMPOSER_HOME' ) ) )
-{
-    $home = getenv( 'COMPOSER_HOME' );
-}
-else
-{
-    @ mkdir( $home = realpath( './data/update/composer' ), 0777 );
+    @ mkdir( $home = './data/update/composer', 0777 );
+    $home = realpath( $home );
 }
 
 sendOutput( 'using ' . escapeshellarg( $home ) . ' as composer home' . PHP_EOL );
