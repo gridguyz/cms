@@ -8,7 +8,7 @@ chdir( dirname( __DIR__ ) );
 
 if ( ! is_file( './composer.json' ) )
 {
-    chdir( dirname( __DIR__ ) );
+    chdir( dirname( dirname( __DIR__ ) ) );
 }
 
 if ( ! empty( $_REQUEST['update'] ) && $_REQUEST['update'] === 'status' )
