@@ -123,7 +123,7 @@ function runProcess( $cmd, array $args = array(), array $env = array() )
 
     if ( empty( $env ) )
     {
-        $env = null;
+        $env = $_ENV;
     }
     else
     {
