@@ -74,9 +74,10 @@ function sendMessage( $result, $messages )
  *
  * @param   string  $cmd
  * @param   array   $args
+ * @param   array   $env
  * @return  void
  */
-function runProcess( $cmd, array $args = array() )
+function runProcess( $cmd, array $args = array(), array $env = array() )
 {
     $outputFilepath = DATA_DIR . '/output.txt';
     $descriptorspec = array(
@@ -109,7 +110,16 @@ function runProcess( $cmd, array $args = array() )
 
     @ chmod( $outputFile, 0777 );
 
-    $proc = proc_open( $cmd, $descriptorspec, $pipes, getcwd() );
+    if ( empty( $env ) )
+    {
+        $env = null;
+    }
+    else
+    {
+        $env = array_merge( $_ENV, $env );
+    }
+
+    $proc = proc_open( $cmd, $descriptorspec, $pipes, getcwd(), $env );
 
     if ( ! is_resource( $proc ) )
     {
@@ -154,9 +164,22 @@ if ( is_dir( './.git' ) )
     sendMessage( null, 'admin.packages.git.pulled' );
 }
 
-runProcess( 'php', array( realpath( './composer.phar' ),
-                          'update',
-                          '--no-dev',
-                          '--no-interaction' ) );
+if ( false === ( $home = getenv( 'HOME' ) ) || ! is_dir( $home ) )
+{
+    @ mkdir( $home = realpath( './data/cache/composer' ), 0777 );
+}
+
+runProcess(
+    'php',
+    array(
+        realpath( './composer.phar' ),
+        'update',
+        '--no-dev',
+        '--no-interaction'
+    ),
+    array(
+        'COMPOSER_HOME' => $home,
+    )
+);
 
 sendMessage( 0, 'admin.packages.update.done' );
