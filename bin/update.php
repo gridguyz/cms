@@ -175,12 +175,12 @@ if ( is_dir( './.git' ) )
     sendMessage( null, 'admin.packages.git.pulled' );
 }
 
-if ( false === ( $home = getenv( 'HOME' ) ) || ! is_dir( $home ) )
+if ( ! ( $home = getenv( 'HOME' ) ) && ! ( $home = getenv( 'COMPOSER_HOME' ) ) )
 {
-    @ mkdir( $home = realpath( './data/cache/composer' ), 0777 );
+    @ mkdir( $home = realpath( './data/update/composer' ), 0777 );
 }
 
-sendOutput( 'HOME=' . escapeshellarg( $home ) . PHP_EOL );
+sendOutput( 'using ' . escapeshellarg( $home ) . ' as composer home' . PHP_EOL );
 
 runProcess(
     'php',
