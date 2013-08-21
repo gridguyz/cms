@@ -2,6 +2,16 @@
 cd "`dirname "$0"`"
 cd ..
 
+if [ $# -eq 0 ]
+then
+    echo ""
+    echo "Preferred usage:" $0 "<user>:<group>"
+    echo ""
+    WWW_USER="www-data:www-data"
+else
+    WWW_USER=$*
+fi
+
 echo ""
 echo "Maintenance activate"
 echo "--------------------"
@@ -22,6 +32,13 @@ echo "---------------"
 echo ""
 
 php composer.phar update --no-dev
+
+echo ""
+echo "Restoring ownership to:" $WWW_USER
+echo "-----------------------------------------"
+echo ""
+
+chown -R $WWW_USER .
 
 echo ""
 echo "Maintenance deactivate"
