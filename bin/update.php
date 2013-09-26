@@ -189,6 +189,22 @@ runProcess(
     array(
         realpath( './composer.phar' ),
         'update',
+        'gridguyz/module-installer',
+        '--no-dev',
+        '--no-interaction'
+    ),
+    array(
+        'COMPOSER_HOME' => $home,
+    )
+);
+
+sendMessage( null, 'admin.packages.update.installer' );
+
+runProcess(
+    'php',
+    array(
+        realpath( './composer.phar' ),
+        'update',
         '--no-dev',
         '--no-interaction'
     ),

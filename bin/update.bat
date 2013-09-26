@@ -17,6 +17,13 @@ ECHO.
 git pull
 
 ECHO.
+ECHO Composer update module installer
+ECHO --------------------------------
+ECHO.
+
+php composer.phar update gridguyz/module-installer --no-dev
+
+ECHO.
 ECHO Composer update
 ECHO ---------------
 ECHO.

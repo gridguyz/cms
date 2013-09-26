@@ -27,6 +27,13 @@ echo ""
 git pull
 
 echo ""
+echo "Composer update module installer"
+echo "--------------------------------"
+echo ""
+
+php composer.phar update gridguyz/module-installer --no-dev
+
+echo ""
 echo "Composer update"
 echo "---------------"
 echo ""
