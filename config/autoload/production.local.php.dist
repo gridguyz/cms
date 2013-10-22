@@ -24,11 +24,12 @@ return array(
                 'mail'   => array(
                     'name'      => 'mail',
                     'options'   => array(
-                        'mail'  => array(
-                            'charset' => 'utf-8',
-                            'from'    => '"Example.com Exception Reporter" <exception@example.com>',
-                            'subject' => 'Example.com Exception',
-                            'to'      => array(
+                        'subject_prepend_text'  => 'Example.com Exception',
+                        'mail'                  => array(
+                            'charset'   => 'utf-8',
+                            'from'      => '"Example.com Exception Reporter" <exception@example.com>',
+                            'subject'   => 'Example.com Exception',
+                            'to'        => array(
                                 'developers@example.com',
                             ),
                         ),
