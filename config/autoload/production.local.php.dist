@@ -1,0 +1,48 @@
+<?php
+/**
+ * Local Configuration Override: production mode
+ *
+ * This configuration override file is for overriding environment-specific and
+ * security-sensitive configuration information. Copy this file without the
+ * .dist extension at the end and populate values as needed.
+ *
+ * @NOTE: This file is ignored from Git by default with the .gitignore included
+ * in gridguyz-cms. This is a good practice, as it prevents sensitive
+ * credentials from accidentally being committed into version control.
+ */
+
+return array(
+    'log' => array(
+        'exception' => array(
+            'writers' => array(
+                'stream' => array(
+                    'name'      => 'stream',
+                    'options'   => array(
+                        'stream'    => './log/exception/error-' . date( 'Y-m-d' ) . '.log',
+                    ),
+                ),
+                'mail'   => array(
+                    'name'      => 'mail',
+                    'options'   => array(
+                        'mail'  => array(
+                            'charset' => 'utf-8',
+                            'from'    => '"Example.com Exception Reporter" <exception@example.com>',
+                            'subject' => 'Example.com Exception',
+                            'to'      => array(
+                                'developers@example.com',
+                            ),
+                        ),
+                    ),
+                    'formatter' => array(
+                        'name'  => 'Zork\Log\Formatter\ExtraHandler',
+                    ),
+                ),
+            ),
+            'processors' => array(
+                'environment'   => array(
+                    'name'      => 'Zork\Log\Processor\Environment',
+                ),
+            ),
+        ),
+    ),
+);
