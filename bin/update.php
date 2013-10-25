@@ -121,13 +121,32 @@ function runProcess( $cmd, array $args = array(), array $env = array() )
 
     sendOutput( '$ ' . $cmd . PHP_EOL );
 
-    if ( empty( $env ) )
+    if ( empty( $_ENV ) )
     {
-        $env = $_ENV;
+        $global = array();
+
+        foreach ( $_SERVER as $key => $value )
+        {
+            $value = getenv( $key );
+
+            if ( false !== $value )
+            {
+                $global[$key] = $value;
+            }
+        }
     }
     else
     {
-        $env = array_merge( $_ENV, $env );
+        $global = $_ENV;
+    }
+
+    if ( empty( $env ) )
+    {
+        $env = $global;
+    }
+    else
+    {
+        $env = array_merge( $global, $env );
     }
 
     $proc = proc_open( $cmd, $descriptorspec, $pipes, getcwd(), $env );
