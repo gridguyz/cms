@@ -2,15 +2,54 @@
 cd "`dirname "$0"`"
 cd ..
 
-if [ $# -eq 0 ]
-then
-    echo ""
-    echo "Preferred usage:" $0 "<user>:<group>"
-    echo ""
-    WWW_USER="www-data:www-data"
-else
-    WWW_USER=$*
-fi
+DEVFLAG=--no-dev
+PREFLAG=
+OPTFLAG=
+WWWUSER=
+
+for ARG in "$@"
+do
+    if [ "$ARG" = "--dev" ]
+    then
+        DEVFLAG=--dev
+        continue
+    fi
+
+    if [ "$ARG" = "--no-dev" ]
+    then
+        DEVFLAG=--no-dev
+        continue
+    fi
+
+    if [ "$ARG" = "--prefer-dist" ]
+    then
+        PREFLAG=--prefer-dist
+        continue
+    fi
+
+    if [ "$ARG" = "--prefer-source" ]
+    then
+        PREFLAG=--prefer-source
+        continue
+    fi
+
+    if [ "$ARG" = "-o" -o "$ARG" = "--optimize-autoloader" ]
+    then
+        OPTFLAG=--optimize-autoloader
+        continue
+    fi
+
+    if [ "$ARG" = "-u" -o "$ARG" = "--user-default" ]
+    then
+        WWWUSER=www-data:www-data
+        continue
+    fi
+
+    if [ -n "$ARG" ]
+    then
+        WWWUSER=$ARG
+    fi
+done
 
 echo ""
 echo "Maintenance activate"
@@ -31,21 +70,35 @@ echo "Composer update module installer"
 echo "--------------------------------"
 echo ""
 
-php composer.phar update gridguyz/module-installer --no-dev
+FLAGS=$DEVFLAG
+if [ -n "$PREFLAG" ]
+then
+    FLAGS="$FLAGS $PREFLAG"
+fi
+
+php composer.phar update gridguyz/module-installer $FLAGS
 
 echo ""
 echo "Composer update"
 echo "---------------"
 echo ""
 
-php composer.phar update --no-dev
+if [ -n "$OPTFLAG" ]
+then
+    FLAGS="$FLAGS $OPTFLAG"
+fi
 
-echo ""
-echo "Restoring ownership to:" $WWW_USER
-echo "-----------------------------------------"
-echo ""
+php composer.phar update $FLAGS
 
-chown -R $WWW_USER .
+if [ -n "$WWWUSER" ]
+then
+    echo ""
+    echo "Restoring ownership to:" $WWWUSER
+    echo "-----------------------------------------"
+    echo ""
+
+    chown -R $WWWUSER .
+fi
 
 echo ""
 echo "Maintenance deactivate"
