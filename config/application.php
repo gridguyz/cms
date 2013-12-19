@@ -33,6 +33,7 @@ return ArrayUtils::merge(
                 'SiteConfiguration'     => 'Grid\Core\SiteConfiguration\Singlesite',
             ),
             'aliases'       => array(
+                'ServiceListenerInterface'              => 'ServiceListener',
                 'Zork\Db\SiteInfo'                      => 'SiteInfo',
                 'Zend\Db\Adapter\Adapter'               => 'DbAdapter',
                 'Zork\Db\SiteConfigurationInterface'    => 'SiteConfiguration',
