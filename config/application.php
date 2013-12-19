@@ -26,8 +26,8 @@ return ArrayUtils::merge(
         'service_manager'   => array(
             'factories'     => array(
                 'DbAdapter'             => 'Zork\Db\Adapter\AdapterServiceFactory',
-                'DependencyInjector'    => 'Zork\Mvc\Service\DiFactory',
                 'ModuleManager'         => 'Zork\Mvc\Service\ModuleManagerFactory',
+                'ServiceListener'       => 'Zork\Mvc\Service\ServiceListenerFactory',
             ),
             'invokables'    => array(
                 'SiteConfiguration'     => 'Grid\Core\SiteConfiguration\Singlesite',
